@@ -1,10 +1,19 @@
 #!/usr/bin/env bash
 
 host_name() {
-    if [[ "${PROMPT_FRAMEWORK_HOST_NAME_WITH_COLON:-yes}" == "yes" ]]; then
-        echo "\h:"
-    else
-        echo "\h"
+    if [[ "${PF_HOST_NAME__ONLY_IF_REMOTE:-yes}" != "yes" \
+          || "${SSH_CONNECTION}" ]]; then
+        case "${PF_HOST_NAME__DISPLAY_MODE}" in
+            "brackets")
+                echo "[\h]"
+                ;;
+            "none")
+                echo "\h"
+                ;;
+            *)
+                echo "\h:"
+                ;;
+        esac
     fi
 }
 
