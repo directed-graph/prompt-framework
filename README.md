@@ -62,5 +62,10 @@ In this example, the prompt will come out as follows:
 
 Prompt Framework sets the following environment variables for your modules:
 
-- `EXIT_CODE`: the exit code of the previous command
+- `PF_EXIT_CODE`: the exit code of the previous command
+
+Parameters can be sent to each module through environment variables. The naming
+convention for the environment variables should be the following:
+
+    PF_<module_name>[__<parameter>]
 

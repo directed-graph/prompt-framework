@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 prompt_framework() {
-    local EXIT_CODE=$?
+    local PF_EXIT_CODE=$?
     local prompt=()
 
     for module in "${PROMPT_FRAMEWORK_MODULES[@]}"; do
