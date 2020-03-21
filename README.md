@@ -29,24 +29,33 @@ The general usage is to do the following in your `bashrc`:
 
 An example:
 
-	source prompt_framework.bash
+    source prompt_framework.bash
 
-	for module in modules/*.bash; do
-		source $module
-	done
+    for module in modules/*.bash; do
+        source $module
+    done
 
-	export PROMPT_FRAMEWORK_MODULES=(
-		host_name
-		elliptical_path
-		shell_level
-		exit_code
-	)
+    # from standard git installation
+    source /etc/bash_completion.d/git-prompt
 
-	export PROMPT_COMMAND=prompt_framework
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_SHOWSTASHSTATE=true
+    GIT_PS1_SHOWUNTRACKEDFILES=true
+    GIT_PS1_SHOWCOLORHINTS=true
+
+    export PROMPT_FRAMEWORK_MODULES=(
+        host_name
+        elliptical_path
+        shell_level
+        __git_ps1
+        exit_code
+    )
+
+    export PROMPT_COMMAND=prompt_framework
 
 In this example, the prompt will come out as follows:
 
-	my-host-name: .../prompt-framework [3] $
+    ...travis.chen/projects/prompt-framework [3] (master *%) $
 
 
 ## Environment Variables
