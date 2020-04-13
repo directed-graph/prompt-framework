@@ -5,7 +5,7 @@
 #
 # Environment Variables:
 #   PF_ELLIPTICAL_PATH__LENGTH: desired maximum length of output (default: 40)
-elliptical_path() {
+pf_elliptical_path() {
     local path=$(pwd | sed "s|^$HOME|~|")
     local length=${PF_ELLIPTICAL_PATH__LENGTH:-40}
 

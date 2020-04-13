@@ -44,11 +44,11 @@ An example:
     GIT_PS1_SHOWCOLORHINTS=true
 
     export PROMPT_FRAMEWORK_MODULES=(
-        host_name
-        elliptical_path
-        shell_level
+        pf_host_name
+        pf_elliptical_path
+        pf_shell_level
         __git_ps1
-        exit_code
+        pf_exit_code
     )
 
     export PROMPT_COMMAND=prompt_framework

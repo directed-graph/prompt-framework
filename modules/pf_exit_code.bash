@@ -5,7 +5,7 @@
 # Environment Variables:
 #   PF_EXIT_CODE__COLOR: the color (default: \[\e[0;31m\])
 #   PF_EXIT_CODE: the exit code
-exit_code() {
+pf_exit_code() {
     if ((${PF_EXIT_CODE:-0} != 0)); then
         local color_on="${PF_EXIT_CODE__COLOR:-\[\e[0;31m\]}"
         local color_off="\[\033[0m\]"
